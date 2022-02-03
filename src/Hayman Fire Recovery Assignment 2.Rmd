@@ -214,12 +214,13 @@ cor(combined_burned$ndvi_burned_avg, combined_burned$ndsi_burned_avg)
 #correlation for unburned data
 cor(combined_unburned$ndvi_unburned_avg, combined_unburned$ndsi_unburned_avg)
 
-Preburngraph <- ggplot(combine_preburn, aes(x=ndsi_preburn_avg, y=ndvi_preburn_avg, color = site)) +
+#graphing the data 
+Preburngraph <- ggplot(combine_preburn, aes(x=ndsi_preburn_avg, y=ndvi_preburn_avg)) +
   geom_point() + 
   theme_few() + 
   scale_color_few() 
 
-Postburngraph <- ggplot(combine_postburn, aes(x=ndsi_postburn_avg, y=ndvi_postburn_avg, color = site)) +
+Postburngraph <- ggplot(combine_postburn, aes(x=ndsi_postburn_avg, y=ndvi_postburn_avg)) +
   geom_point() + 
   theme_few() + 
   scale_color_few() 
@@ -234,6 +235,7 @@ Unburnedgraph <- ggplot(combined_unburned, aes(x=ndsi_unburned_avg, y=ndvi_unbur
   theme_few() + 
   scale_color_few() 
 
+#Plotting the data in one frame
 Plot <- ggarrange(Preburngraph, Postburngraph, Burnedgraph, Unburnedgraph,
                  labels = c("Pre-burned", "Post-burned", "Burned", "Unburned"),
                  ncol = 2, nrow = 2)
@@ -250,7 +252,7 @@ For un-burned snow effect, the correlation is -0.031
 
 For burned snow effect, the correlation is 0.087.
 
-The post-burn condition has the strongest correlation between the previous year's snow coverage and the vegetation growth for the following year. The weakest correlation between snow coverage and vegetation growth was for the un-burned condition. This is interesting because this could potentially mean that the Hayman Fire has pushed the vegetation growth to rely more on snow coverage to get their nutrients. This is still a weak correlation, so more research will need to be conducted to determine if this is true or not; there are many other variables in the environment that could have caused this correlation.
+The snow effect from question 2 is a more generalized correlation. While all of these variables have a weak correlation, this question isolates the different variables in the data to help determine the relationship between snow coverage and vegetation growth. The post-burn condition has the strongest correlation between the previous year's snow coverage and the vegetation growth for the following year. The weakest correlation between snow coverage and vegetation growth was for the un-burned condition. This is interesting because this could potentially mean that the Hayman Fire has pushed the vegetation growth to rely more on snow coverage to get their nutrients. This is still a weak correlation, so more research will need to be conducted to determine if this is true or not; there are many other variables in the environment that could have caused this correlation.
  
 
 ## Question 4
