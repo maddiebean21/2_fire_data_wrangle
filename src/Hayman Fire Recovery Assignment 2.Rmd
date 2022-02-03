@@ -76,9 +76,10 @@ ggplot(summer_only,aes(x=ndmi,y=ndvi,color=site)) +
   theme_few() + 
   scale_color_few() + 
   theme(legend.position=c(0.8,0.8))
+
 ```
 
-The correlation between NDVI and NDMI is 
+There is a strong, positive correlation between NDMI and NDVI. 
 
 ## Question 2 
 
@@ -284,7 +285,7 @@ ndsisnowiest <- full_wide[c("DateTime", "ndsi", "month", "year", "site")] %>%
 
 ggplot(ndsisnowiest, aes(x=month, y=ndsi)) +
   geom_bar(stat="identity", fill="#56B4E9") +
-  theme_minimal()
+  theme_minimal() 
 ```
 
 The snowiest month on average is January. 
